@@ -43,7 +43,7 @@ const App = () => {
                     <h1>Links</h1>
                 </Route>
                 <Route path="/">
-                    <h1>Homek</h1>
+                    <h1>Home</h1>
                 </Route>
             </Switch>
         </div>

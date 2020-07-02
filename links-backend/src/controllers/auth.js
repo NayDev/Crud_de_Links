@@ -24,10 +24,10 @@ router.post('/sign-in', accountSignIn, async(req, res) => {
 
 
     const token = generateJwt({ id: account.id });
-    const refreshtoken = generateRefreshJwt({ id: account.id, version: account.jwtVersion });
+    const refreshToken = generateRefreshJwt({ id: account.id, version: account.jwtVersion });
 
 
-    return res.jsonOK(account, getMessage('account.signin.success'), { token, refreshtoken });
+    return res.jsonOK(account, getMessage('account.signin.success'), { token, refreshToken });
 });
 
 router.post('/sign-up', accountSignUp, async(req, res) => {
@@ -41,9 +41,9 @@ router.post('/sign-up', accountSignUp, async(req, res) => {
     const newAccount = await Account.create({ email, password: hash });
 
     const token = generateJwt({ id: newAccount.id });
-    const refreshtoken = generateRefreshJwt({ id: newAccount.id, version: newAccount.jwtVersion });
+    const refreshToken = generateRefreshJwt({ id: newAccount.id, version: newAccount.jwtVersion });
 
-    return res.jsonOK(newAccount, getMessage('account.signup.success'), { token, refreshtoken });
+    return res.jsonOK(newAccount, getMessage('account.signup.success'), { token, refreshToken });
 });
 
 

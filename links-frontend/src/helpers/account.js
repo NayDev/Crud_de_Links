@@ -21,3 +21,4 @@ export const getToken = () => getCookie(COOKIE_TOKEN);
 
 export const setRefreshToken = (refreshToken) => setCookie(COOKIE_REFRESH_TOKEN, refreshToken, options);
 export const getRefreshToken = () => getCookie(COOKIE_REFRESH_TOKEN);
+

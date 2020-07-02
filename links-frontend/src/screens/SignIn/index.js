@@ -7,15 +7,13 @@ import { signIn } from './SignInActions';
 
 const SignIn = (props) => {
 
-    const { account, signIn } = props;
+    const { signIn } = props;
 
     const submitHandler = (e) => {
         e.preventDefault();
 
         signIn({email: 'nayara.lopes2007@gmail.com', password: '123456' });
     };
-
-    console.log('*** SignIn.account', account);
 
     
     return ( 

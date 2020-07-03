@@ -18,7 +18,5 @@ export const signIn = (data) => {
     return { type: SIGN_IN, payload};
 };
 export const signOut = () => {
-    
-        return { type: SIGN_OUT };
-   
+    return { type: SIGN_OUT, payload: {} };
 };

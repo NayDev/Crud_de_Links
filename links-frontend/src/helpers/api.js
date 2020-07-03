@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getToken } from './account';
 
 export const getApiUrl = (path) => {
     return `http://localhost:3001${path}`;
@@ -6,7 +7,12 @@ export const getApiUrl = (path) => {
 
 
 export const getHeaders = () => {
-    return{};
+    const token = getToken();
+    if(!token) return{};
+
+    return {
+        Authorization: `Bearer ${token}`,
+    }
 };
 
 

@@ -26,13 +26,13 @@ export default function (state = initialState, action) {
 
             return {...state, account };
 
-            case SIGN_OUT: {
+            case SIGN_OUT:
 
                 removeAccount();
                 removeToken();
                 removeRefreshToken();
-                return { ...initialState };
-            }
+            
+                return { ...state, account: null };
 
         default:
             return state;

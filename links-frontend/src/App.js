@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 import Home from './screens/Home';
+import { connect } from 'react-redux';
 import SignIn from './screens/SignIn';
 import SignUp from './screens/Signup';
 import ManageLinks from './screens/Manage/Links';
 import ManageLinksCreate from './screens/Manage/Links/Create';
 import ManageLinksEdit from './screens/Manage/Links/Edit';
 
-const App = () => {
+import { initAccount } from './actions/AccountActions';
+
+const App = ({initAccount}) => {
+
+    useEffect(() => {
+        initAccount();
+    }, [initAccount]);
+
     return (
         <BrowserRouter>
         <div>
@@ -55,5 +63,7 @@ const App = () => {
         </BrowserRouter>
     );
 };
-
-export default App;
+const mapsStateToProps = (state) => {
+    return { account: state.account.account };
+}
+export default connect(mapsStateToProps, {initAccount})(App);

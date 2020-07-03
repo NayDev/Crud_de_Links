@@ -1,4 +1,4 @@
-import { LINK_CREATE, LINK_LIST, LINK_GET, LINK_UPDATE } from '../actions/LinkActions';
+import { LINK_CREATE, LINK_LIST, LINK_GET, LINK_UPDATE, LINK_TO_REMOVE } from '../actions/LinkActions';
 
 const initialState = {
     link: null,
@@ -40,6 +40,11 @@ export default function (state = initialState, action) {
             const links = response ? response.data : null;
     
             return { ...state, links };
+        }
+
+        case LINK_TO_REMOVE: {
+
+            return {...state, linkToRemove : payload};
         }
 
         default: {

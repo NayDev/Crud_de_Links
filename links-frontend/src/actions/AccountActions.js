@@ -23,5 +23,5 @@ export const signOut = () => {
 };
 
 export const initAccount = () => {
-    return {type: INIT_ACCOUNT, payload: {}};
+    return {type: INIT_ACCOUNT, payload: {}}
 }
